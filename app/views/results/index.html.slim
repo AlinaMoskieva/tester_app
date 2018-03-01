@@ -1,5 +1,15 @@
 .row
-  - tests.each_with_index do |test, index|
-    h4= "Test#{index + 1}"
-    - test.tasks.each do |task|
-      = render "result", task: task
+  .small-4.small-centered.columns.end
+    h4 = "Результаты"
+  .small-6.small-centered.columns
+    ul
+      li
+        = "Вертикальное/горизонтальное отображение: #{results.divided_results}"
+      li
+        = "Размер текста: #{results.style_results}"
+  .columns
+    - tests.each_with_index do |test, index|
+      .small-2.small-centered.columns.end
+        h4= "Test#{index + 1}"
+      - test.tasks.each do |task|
+        = render "result", task: task

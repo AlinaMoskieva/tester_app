@@ -41,7 +41,7 @@ module Tests
       answer.split("").each { |num| question += NUMBERS[num.to_i] + " " }
       question = "<p style='font-size: #{size}pt'>#{question}</p>"
 
-      Task.create(test: test, answer: answer, question: question, content_type: "verbal", index: task_index)
+      Task.create(test: test, answer: answer, question: question, content_type: "style", index: task_index)
     end
 
     def create_verbal_task(div)

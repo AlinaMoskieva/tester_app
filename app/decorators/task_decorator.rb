@@ -4,7 +4,7 @@ class TaskDecorator < ApplicationDecorator
   delegate :tasks, to: :test
 
   def progress
-    "#{index + 1}/ #{tasks.count}"
+    "#{index + 1}/#{tasks.count}"
   end
 
   def question_text
