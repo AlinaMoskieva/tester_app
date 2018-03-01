@@ -4,10 +4,9 @@ module Tests
 
     delegate :user, :test, to: :context
 
-    NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"].freeze
-    ICONS = { zero: "\x30\xE2\x83\xA3", one: "\x31\xE2\x83\xA3", two: "\x32\xE2\x83\xA3", three: "\x33\xE2\x83\xA3",
-              four: "\x34\xE2\x83\xA3", five: "\x35\xE2\x83\xA3", six: "\x36\xE2\x83\xA3", seven: "\x37\xE2\x83\xA3",
-              eight: "\x38\xE2\x83\xA3", nine: "\x39\xE2\x83\xA3" }.freeze
+    NUMBERS = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "деввять"].freeze
+    ICONS = ["\x30\xE2\x83\xA3", "\x31\xE2\x83\xA3", "\x32\xE2\x83\xA3", "\x33\xE2\x83\xA3", "\x34\xE2\x83\xA3",
+            "\x35\xE2\x83\xA3", "\x36\xE2\x83\xA3", "\x37\xE2\x83\xA3", "\x38\xE2\x83\xA3", "\x39\xE2\x83\xA3"].freeze
     DIVIDING_SYMBOLS = [" ", "<br>"].freeze
     SIZEZ = [10, 18].freeze
 
@@ -53,7 +52,7 @@ module Tests
 
     def create_task_with_icon(div)
       answer, question = [generate_answer, ""]
-      answer.split("").each { |num| question +=  ICONS[NUMBERS[num.to_i].to_sym] + div}
+      answer.split("").each { |num| question +=  ICONS[num.to_i] + div}
 
       Task.create(test: test, answer: answer, question: question, content_type: "icon", index: task_index)
     end
