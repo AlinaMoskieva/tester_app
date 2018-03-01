@@ -4,7 +4,7 @@ module Tests
 
     delegate :user, :test, to: :context
 
-    NUMBERS = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "деввять"].freeze
+    NUMBERS = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"].freeze
     ICONS = ["\x30\xE2\x83\xA3", "\x31\xE2\x83\xA3", "\x32\xE2\x83\xA3", "\x33\xE2\x83\xA3", "\x34\xE2\x83\xA3",
             "\x35\xE2\x83\xA3", "\x36\xE2\x83\xA3", "\x37\xE2\x83\xA3", "\x38\xE2\x83\xA3", "\x39\xE2\x83\xA3"].freeze
     DIVIDING_SYMBOLS = [" ", "<br>"].freeze

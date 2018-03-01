@@ -12,5 +12,5 @@
       .task__answer_form
         = simple_form_for(task) do |f|
           .form-inputs
-            = f.input :user_answer
+            = f.input :user_answer, label: "Ответ введите цифрами"
             = f.button :submit, "Ответить", class:"secondary small button"
