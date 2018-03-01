@@ -1,0 +1,5 @@
+.row
+  - tests.each_with_index do |test, index|
+    h4= "Test#{index + 1}"
+    - test.tasks.each do |task|
+      = render "result", task: task

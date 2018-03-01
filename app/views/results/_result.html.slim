@@ -1,0 +1,16 @@
+.row
+  div(class="callout #{task.truthy? ? "primary" : "alert"}")
+    p
+      b="Task##{task.index}"
+    p
+      b Вопрос:
+      br
+      = task.question.html_safe
+    p
+      b Ответ пользователя
+      br
+      = task.user_answer
+    p
+      b Правильный ответ
+      br
+      = task.answer
