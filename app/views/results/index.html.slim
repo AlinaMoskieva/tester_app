@@ -11,5 +11,5 @@
     - tests.each_with_index do |test, index|
       .small-2.small-centered.columns.end
         h4= "Test#{index + 1}"
-      - test.tasks.each do |task|
+      - test.tasks.order(:index).each do |task|
         = render "result", task: task
