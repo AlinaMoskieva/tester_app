@@ -12,7 +12,7 @@ class Task
   bindings: (el)->
     @answer_form.hide()
     setInterval(@incrementTimer, 1000)
-    setTimeout(@show_answer_form, 10000)
+    setTimeout(@show_answer_form, 5000)
 
   show_answer_form: (event)=>
     @answer_form.show()

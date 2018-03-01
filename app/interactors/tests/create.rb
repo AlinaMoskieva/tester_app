@@ -9,6 +9,7 @@ module Tests
               four: "\x34\xE2\x83\xA3", five: "\x35\xE2\x83\xA3", six: "\x36\xE2\x83\xA3", seven: "\x37\xE2\x83\xA3",
               eight: "\x38\xE2\x83\xA3", nine: "\x39\xE2\x83\xA3" }.freeze
     DIVIDING_SYMBOLS = [" ", "<br>"].freeze
+    SIZEZ = [10, 18].freeze
 
     def call
       context.test = Test.create(user: user)
@@ -19,7 +20,13 @@ module Tests
 
     def generate_tasks
       create_positon_task
-      # TODO: creaty_stylized_tasks
+      creaty_stylized_tasks
+    end
+
+    def creaty_stylized_tasks
+      SIZEZ.each do |size|
+        create_resizable_task(size)
+      end
     end
 
     def create_positon_task
@@ -27,6 +34,14 @@ module Tests
         create_verbal_task(symbol)
         create_task_with_icon(symbol)
       end
+    end
+
+    def create_resizable_task(size)
+      answer, question = [generate_answer, ""]
+      answer.split("").each { |num| question += NUMBERS[num.to_i] + " " }
+      question = "<p style='font-size: #{size}pt'>#{question}</p>"
+
+      Task.create(test: test, answer: answer, question: question, content_type: "verbal", index: task_index)
     end
 
     def create_verbal_task(div)
