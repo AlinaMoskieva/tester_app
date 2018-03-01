@@ -1,0 +1,11 @@
+.row
+  .columns
+    = task.progress
+    h4 Question
+    p
+      = task.question.html_safe
+
+    = simple_form_for(task) do |f|
+      .form-inputs
+        = f.input :user_answer
+        = f.button :submit, class:"secondary small button"
