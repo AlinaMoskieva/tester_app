@@ -5,7 +5,9 @@ module Tests
     delegate :user, :test, to: :context
 
     NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"].freeze
-    ICONS = { zero: "0", one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9" }.freeze
+    ICONS = { zero: "\x30\xE2\x83\xA3", one: "\x31\xE2\x83\xA3", two: "\x32\xE2\x83\xA3", three: "\x33\xE2\x83\xA3",
+              four: "\x34\xE2\x83\xA3", five: "\x35\xE2\x83\xA3", six: "\x36\xE2\x83\xA3", seven: "\x37\xE2\x83\xA3",
+              eight: "\x38\xE2\x83\xA3", nine: "\x39\xE2\x83\xA3" }.freeze
     DIVIDING_SYMBOLS = [" ", "<br>"].freeze
 
     def call
