@@ -1,11 +1,13 @@
 .row
-  .columns
+  .small-7.small-centered.columns
     .test
       = task.progress
       .task__question
         h4 Question
         p
           = task.question.html_safe
+      #task__timer
+        p= 1
       .task__answer_form
         = simple_form_for(task) do |f|
           .form-inputs
