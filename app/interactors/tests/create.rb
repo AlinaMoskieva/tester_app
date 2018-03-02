@@ -18,7 +18,7 @@ module Tests
     private
 
     def generate_tasks
-      # create_positon_task
+      create_positon_task
       creaty_stylized_tasks
     end
 
