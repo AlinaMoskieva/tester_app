@@ -8,7 +8,7 @@ module Tests
     ICONS = ["\x30\xE2\x83\xA3", "\x31\xE2\x83\xA3", "\x32\xE2\x83\xA3", "\x33\xE2\x83\xA3", "\x34\xE2\x83\xA3",
             "\x35\xE2\x83\xA3", "\x36\xE2\x83\xA3", "\x37\xE2\x83\xA3", "\x38\xE2\x83\xA3", "\x39\xE2\x83\xA3"].freeze
     DIVIDING_SYMBOLS = [" ", "<br>"].freeze
-    SIZEZ = [10, 18].freeze
+    FONTS = ["Snell Roundhand", "Georgia"].freeze
 
     def call
       context.test = Test.create(user: user)
@@ -18,13 +18,13 @@ module Tests
     private
 
     def generate_tasks
-      create_positon_task
+      # create_positon_task
       creaty_stylized_tasks
     end
 
     def creaty_stylized_tasks
-      SIZEZ.each do |size|
-        create_resizable_task(size)
+      FONTS.each do |font|
+        create_resizable_task(font)
       end
     end
 
@@ -38,7 +38,7 @@ module Tests
     def create_resizable_task(size)
       answer, question = [generate_answer, ""]
       answer.split("").each { |num| question += NUMBERS[num.to_i] + " " }
-      question = "<p style='font-size: #{size}pt'>#{question}</p>"
+      question = "<p style='font-family: #{size}'>#{question}</p>"
 
       Task.create(test: test, answer: answer, question: question, content_type: "style", index: task_index)
     end
